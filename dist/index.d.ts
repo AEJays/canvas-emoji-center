@@ -1,3 +1,4 @@
+import { CanvasTextAlign } from './../node_modules/canvas/types/index.d';
 import { CanvasRenderingContext2D } from 'canvas';
 export interface DrawPngReplaceEmojiParams {
     text: string;
@@ -9,6 +10,7 @@ export interface DrawPngReplaceEmojiParams {
     emojiH: number;
     length?: number;
     emojiStyle?: string;
+    float: CanvasTextAlign;
 }
 export declare class CanvasEmoji {
     private canvasCtx;
@@ -18,6 +20,7 @@ export declare class CanvasEmoji {
         str: string;
         emojiArr: any;
     };
+    getStrLength(str: string, emojiW?: number): number;
     drawPngReplaceEmoji(data: DrawPngReplaceEmojiParams): {
         x: number;
     };

@@ -6,3 +6,4 @@ coverage
 run
 logs
 app
+package-lock.json

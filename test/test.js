@@ -7,15 +7,18 @@ function drawPngReplaceEmoji() {
     const canvas = createCanvas(800, 200);
     const canvasCtx = canvas.getContext("2d");
     const canvasEmoji = new CanvasEmoji(canvasCtx);
+    // const len = canvasEmoji.getStrLength("测试一下哦测试一下{kiss}测试一下{kiss}{dancer}测试一下{kiss}测试一下{kiss}{dancer}")
+    // console.log(len)
     const a = canvasEmoji.drawPngReplaceEmoji({
-        text: "测试一下哦💋💃测试一下💋测试一下💋💃测试一下💋测试一下💋💃",
+        text: "测试一下哦💋测试一下💋测试一下💋💃",
         fillStyle: "#000000",
         font: "bold 12px Impact",
         x: 0,
         y: 100,
         emojiW: 12,
         emojiH: 12,
-        length: 20
+        length: -1,
+        float: 'right'
     });
     const out = fs.createWriteStream(__dirname + "/test.png");
     const stream = canvas.createPNGStream();
@@ -47,4 +50,4 @@ async function drawPngReplaceEmojiWithEmojicdn() {
 }
 
 console.log(drawPngReplaceEmoji());
-drawPngReplaceEmojiWithEmojicdn();
+// drawPngReplaceEmojiWithEmojicdn();
