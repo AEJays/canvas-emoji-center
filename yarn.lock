@@ -108,7 +108,7 @@ builtin-modules@^1.1.1:
   resolved "https://registry.npmjs.org/builtin-modules/-/builtin-modules-1.1.1.tgz"
   integrity sha512-wxXCdllwGhI2kCC0MnvTGYTMvnVZTvqgypkiTI8Pa5tcz2i6VqsqwYGgqwXji+4RgCzms6EajE4IxiUH6HH8nQ==
 
-canvas@^2.9.3:
+canvas@^2.11.2:
   version "2.11.2"
   resolved "https://registry.npmjs.org/canvas/-/canvas-2.11.2.tgz"
   integrity sha512-ItanGBMrmRV7Py2Z+Xhs7cT+FNt5K0vPL4p9EZ/UX/Mu7hFbkxSjKF2KVtPwX7UYWp7dRKnrTvReflgrItJbdw==

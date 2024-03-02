@@ -49,7 +49,7 @@ class CanvasEmoji {
                 return nowX;
             }
             else if (float == 'center') {
-                return nowX + ((canvasCtx.canvas.width - width) / 2);
+                return ((canvasCtx.canvas.width - width) / 2);
             }
             else {
                 return canvasCtx.canvas.width - nowX;
@@ -68,7 +68,7 @@ class CanvasEmoji {
         let strWidth = this.getStrLength(text, emojiW);
         let oldWidth = 0;
         if (float === "center" || float === "right") {
-            x += getX(x, strWidth);
+            x = getX(x, strWidth);
             oldWidth = x - strWidth;
             if (float === "right") {
                 x = oldWidth;
