@@ -10,13 +10,13 @@ function drawPngReplaceEmoji() {
     // const len = canvasEmoji.getStrLength("测试一下哦测试一下{kiss}测试一下{kiss}{dancer}测试一下{kiss}测试一下{kiss}{dancer}")
     // console.log(len)
     const a = canvasEmoji.drawPngReplaceEmoji({
-        text: "测试一下哦💋测试一下💋测试一下💋💃",
+        text: "广州复古咖啡馆😍😍😍😍😍😍真爱了",
         fillStyle: "#000000",
-        font: "bold 12px Impact",
+        font: "bold 36px Impact",
         x: 0,
         y: 100,
-        emojiW: 12,
-        emojiH: 12,
+        emojiW: 36,
+        emojiH: 36,
         length: -1,
         float: 'center'
     });

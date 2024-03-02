@@ -80,7 +80,7 @@ export class CanvasEmoji {
       if(float == 'left'){
         return nowX;
       }else if(float == 'center'){
-        return ((canvasCtx.canvas.width - width) / 2) 
+        return ((canvasCtx.canvas.width - width) / 2) + 3.5 * emojiW;
       }else{
         return canvasCtx.canvas.width - nowX;
       }
@@ -109,6 +109,7 @@ export class CanvasEmoji {
     const emojiMap = new Map();
     for (const emojiItem of emojiArr) {
       const index = text.indexOf(emojiItem);
+      console.log(index,"index")
       if (length !== -1 && length - text.substring(0, index).length <= 0) {
         canvasCtx.fillText(`${text.substring(0, length)}...`, x, y);
         ctxText = this.canvasCtx.measureText(`${text.substring(0, length)}...`);
@@ -132,6 +133,7 @@ export class CanvasEmoji {
         oldWidth += ctxText.width
         x = oldWidth;
       }else if(float === 'center'){
+        console.log(index,"FLOATINDEX")
         x += ctxText.width;
       }
       const emojiImg = new Image();
@@ -153,10 +155,13 @@ export class CanvasEmoji {
           canvasCtx.drawImage(emojiImg, x, y - (5 / 6) * emojiH, emojiW, emojiH);
           x += emojiW;
         }else if(float == "center"){
-          // x -= emojiW / 4;
-          x += emojiW;
-          canvasCtx.drawImage(emojiImg, x - emojiW * 2 - emojiW, y - (5 / 6) * emojiH, emojiW, emojiH);
-          // x += emojiW;
+          canvasCtx.drawImage(emojiImg, x - emojiW * (index != 0?index / 2:3/2), y - (5 / 6) * emojiH, emojiW, emojiH);
+          // x = x + (emojiW * (index != 0?index/2:2) - (emojiW * index / 2))/2;
+          if(index != 0){
+            x-= emojiW
+          }else{
+            x+= emojiW;
+          }
         }else if(float == "right"){
           oldWidth += emojiW;
           x = oldWidth;
