@@ -109,7 +109,6 @@ export class CanvasEmoji {
     const emojiMap = new Map();
     for (const emojiItem of emojiArr) {
       const index = text.indexOf(emojiItem);
-      console.log(index,"index")
       if (length !== -1 && length - text.substring(0, index).length <= 0) {
         canvasCtx.fillText(`${text.substring(0, length)}...`, x, y);
         ctxText = this.canvasCtx.measureText(`${text.substring(0, length)}...`);
@@ -129,11 +128,9 @@ export class CanvasEmoji {
       if(float === 'left'){
         x += ctxText.width;
       }else if(float === 'right'){
-        console.log(ctxText,oldWidth)
         oldWidth += ctxText.width
         x = oldWidth;
       }else if(float === 'center'){
-        console.log(index,"FLOATINDEX")
         x += ctxText.width;
       }
       const emojiImg = new Image();
