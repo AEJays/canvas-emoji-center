@@ -16,6 +16,7 @@ export interface DrawPngReplaceEmojiParams {
   length?: number;
   emojiStyle?: string;
   float: CanvasTextAlign;
+  isMax: boolean;
 }
 
 export class CanvasEmoji {
@@ -76,11 +77,16 @@ export class CanvasEmoji {
     const { fillStyle, font, y, emojiW, emojiH } = data;
     let { text, x, length } = data;
     let { float="left" } = data;
+    let { isMax=false } = data // 满屏配置
+    let waitFloat = float //存储float配置
+    if(isMax) {
+      float = 'left'
+    }
     let getX:Function = (nowX: number, width: number) => {
       if(float == 'left'){
         return nowX;
       }else if(float == 'center'){
-        return ((canvasCtx.canvas.width - width) / 2) + 3.5 * emojiW;
+        return nowX + ((canvasCtx.canvas.width - width) / 2) + 3.5 * emojiW;
       }else{
         return canvasCtx.canvas.width - nowX;
       }
@@ -96,6 +102,9 @@ export class CanvasEmoji {
     let ctxText;
     let i = 0;
     let strWidth = this.getStrLength(text, emojiW)
+    if(waitFloat == "center"){
+        x = x + (canvasCtx.canvas.width - strWidth) / 2;
+    }
     // 初始化 x 
     let oldWidth = 0;
 

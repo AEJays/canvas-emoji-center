@@ -44,12 +44,17 @@ class CanvasEmoji {
         const { fillStyle, font, y, emojiW, emojiH } = data;
         let { text, x, length } = data;
         let { float = "left" } = data;
+        let { isMax = false } = data;
+        let waitFloat = float;
+        if (isMax) {
+            float = 'left';
+        }
         let getX = (nowX, width) => {
             if (float == 'left') {
                 return nowX;
             }
             else if (float == 'center') {
-                return ((canvasCtx.canvas.width - width) / 2) + 3.5 * emojiW;
+                return nowX + ((canvasCtx.canvas.width - width) / 2) + 3.5 * emojiW;
             }
             else {
                 return canvasCtx.canvas.width - nowX;
@@ -66,6 +71,9 @@ class CanvasEmoji {
         let ctxText;
         let i = 0;
         let strWidth = this.getStrLength(text, emojiW);
+        if (waitFloat == "center") {
+            x = x + (canvasCtx.canvas.width - strWidth) / 2;
+        }
         let oldWidth = 0;
         if (float === "center" || float === "right") {
             x = getX(x, strWidth);
@@ -77,7 +85,6 @@ class CanvasEmoji {
         const emojiMap = new Map();
         for (const emojiItem of emojiArr) {
             const index = text.indexOf(emojiItem);
-            console.log(index, "index");
             if (length !== -1 && length - text.substring(0, index).length <= 0) {
                 canvasCtx.fillText(`${text.substring(0, length)}...`, x, y);
                 ctxText = this.canvasCtx.measureText(`${text.substring(0, length)}...`);
@@ -99,12 +106,10 @@ class CanvasEmoji {
                 x += ctxText.width;
             }
             else if (float === 'right') {
-                console.log(ctxText, oldWidth);
                 oldWidth += ctxText.width;
                 x = oldWidth;
             }
             else if (float === 'center') {
-                console.log(index, "FLOATINDEX");
                 x += ctxText.width;
             }
             const emojiImg = new canvas_1.Image();

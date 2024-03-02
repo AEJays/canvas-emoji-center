@@ -18,7 +18,8 @@ function drawPngReplaceEmoji() {
         emojiW: 36,
         emojiH: 36,
         length: -1,
-        float: 'center'
+        float: 'center',
+        isMax: true
     });
     const out = fs.createWriteStream(__dirname + "/test.png");
     const stream = canvas.createPNGStream();

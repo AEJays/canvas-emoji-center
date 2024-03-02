@@ -11,6 +11,7 @@ export interface DrawPngReplaceEmojiParams {
     length?: number;
     emojiStyle?: string;
     float: CanvasTextAlign;
+    isMax: boolean;
 }
 export declare class CanvasEmoji {
     private canvasCtx;
