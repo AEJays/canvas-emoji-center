@@ -1,6 +1,6 @@
 {
   "name": "canvas-emoji",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "```bash\r $ npm install -save canvas-emoji\r ```",
   "main": "./dist/index.js",
   "scripts": {
