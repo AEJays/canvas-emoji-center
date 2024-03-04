@@ -1,9 +1,13 @@
-# canvas-emoji
+# canvas-emoji-optimize
+
+## description
+
+Since the original author no longer maintained it, I changed some logic based on [canvas-emoji](https://github.com/Automattic/node-canvas/).
 
 ## Installation
 
 ```bash
-$ npm install -save canvas-emoji
+$ npm install -save canvas-emoji-optimize
 ```
 
 By default, binaries for macOS, Linux and Windows will be downloaded. If you want to build from source, use `npm install --build-from-source` and see the **Compiling** section below.

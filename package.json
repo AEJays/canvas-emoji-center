@@ -1,7 +1,7 @@
 {
-  "name": "canvas-emoji",
+  "name": "canvas-emoji-optimize",
   "version": "1.2.2",
-  "description": "```bash\r $ npm install -save canvas-emoji\r ```",
+  "description": "```bash\r $ npm install -save canvas-emoji-optimize\r ```",
   "main": "./dist/index.js",
   "scripts": {
     "build": "tsc",
@@ -14,7 +14,7 @@
     "url": "git+https://gitee.com/aedge/canvas-emoji-center.git"
   },
   "keywords": [],
-  "author": "realcxj1989 <362377487@qq.com>",
+  "author": "AEdge <aedgejay@qq.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://gitee.com/aedge/canvas-emoji-center/issues"
